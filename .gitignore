@@ -1,0 +1,5 @@
+/.quarto/
+/.Rproj.user
+/*.qmd
+/*.Rproj
+/_quarto.yml
