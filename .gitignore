@@ -1,5 +1,4 @@
 /.quarto/
-/.Rproj.user
-/*.qmd
-/*.Rproj
-/_quarto.yml
+.Rproj.user
+*.Rproj
+_quarto.yml
