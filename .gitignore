@@ -2,3 +2,5 @@
 .Rproj.user
 *.Rproj
 _quarto.yml
+.RData
+.Rhistory
