@@ -76,19 +76,19 @@ plot(model_tars_observed_f)
 # Cluth size
 
 ```{r}
-model_cs_shanon <- glm(CS ~ age+sex+year+seq_date+shannon_entropy_stand+cluth_manipulation+LD, data=df) 
+model_cs_shanon <- glm(CS ~ age+sex+year+seq_date+shannon_entropy_stand+cluth_manipulation+LD, data=df, family = poisson()) 
 summary(model_cs_shanon)
 plot(model_cs_shanon)
 
-model_cs_evenness <-glm(CS ~ age+sex+year+seq_date+pielou_evenness_stand+cluth_manipulation+LD, data=df)
+model_cs_evenness <-glm(CS ~ age+sex+year+seq_date+pielou_evenness_stand+cluth_manipulation+LD, data=df, family = poisson())
 summary(model_cs_evenness)
 plot(model_cs_evenness)
 
-model_cs_faith <- glm(CS ~ age+sex+year+seq_date+faith_pd_stand+cluth_manipulation+LD, data=df)
+model_cs_faith <- glm(CS ~ age+sex+year+seq_date+faith_pd_stand+cluth_manipulation+LD, data=df, family = poisson())
 summary(model_cs_faith)
 plot(model_cs_faith)
 
-model_cs_observed_f <- glm(CS ~ age+sex+year+seq_date+observed_features_stand+cluth_manipulation+LD, data=df)
+model_cs_observed_f <- glm(CS ~ age+sex+year+seq_date+observed_features_stand+cluth_manipulation+LD, data=df, family = poisson())
 summary(model_cs_observed_f)
 plot(model_cs_observed_f)
 ```
@@ -96,7 +96,7 @@ plot(model_cs_observed_f)
 # Number of chicks on day 14th
 
 ```{r}
-model_chicks_shanon <- glm(chicks_number ~ age+sex+year+seq_date+shannon_entropy_stand+cluth_manipulation+LD, data=df) 
+model_chicks_shanon <- glm(chicks_number ~ age+sex+year+seq_date+shannon_entropy_stand+cluth_manipulation+LD, data=df, family = poisson()) 
 summary(model_chicks_shanon)
 plot(model_chicks_shanon)
 
@@ -105,20 +105,20 @@ df |> ggplot(aes(x = shannon_entropy_stand, y = chicks_number)) + geom_point() +
 
 df |> ggplot(aes(x = LD, y = chicks_number)) + geom_point() + geom_smooth(method = "glm")
 
-model_chicks_evenness <-glm(chicks_number ~ age+sex+year+seq_date+pielou_evenness_stand+cluth_manipulation+LD, data=df)
+model_chicks_evenness <-glm(chicks_number ~ age+sex+year+seq_date+pielou_evenness_stand+cluth_manipulation+LD, data=df, family = poisson())
 summary(model_chicks_evenness)
 plot(model_chicks_evenness)
 
 df |> ggplot(aes(x = pielou_evenness_stand, y = chicks_number)) + geom_point() + geom_smooth(method = "glm")
 df |> ggplot(aes(x = LD, y = chicks_number)) + geom_point() + geom_smooth(method = "glm")
 
-model_chicks_faith <- glm(chicks_number ~ age+sex+year+seq_date+faith_pd_stand+cluth_manipulation+LD, data=df)
+model_chicks_faith <- glm(chicks_number ~ age+sex+year+seq_date+faith_pd_stand+cluth_manipulation+LD, data=df, family = poisson())
 summary(model_chicks_faith)
 plot(model_chicks_faith)
 
 df |> ggplot(aes(x = faith_pd_stand, y = chicks_number)) + geom_point() + geom_smooth(method = "glm")
 
-model_chicks_observed_f <- glm(chicks_number ~ age+sex+year+seq_date+observed_features_stand+cluth_manipulation+LD, data=df)
+model_chicks_observed_f <- glm(chicks_number ~ age+sex+year+seq_date+observed_features_stand+cluth_manipulation+LD, data=df, family = poisson())
 summary(model_chicks_observed_f)
 plot(model_chicks_observed_f)
 
